@@ -1,0 +1,15 @@
+#money_hose {
+    padding: 10px;
+    background-color: #10551f;
+    color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#money_hose:hover {
+    background-color: #0d8728;
+}
+
+.employee_container {
+    background-color: #ddd;
+    color: #333;
+}

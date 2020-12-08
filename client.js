@@ -1,3 +1,13 @@
+$(document).ready(readyNow);
+
+function readyNow() {
+  console.log('jq');
+$('#money_hose').on('click', whoGetsPaid)
+}
+function whoGetsPaid() {
+  createEmployeeObject(employees)
+}
+
 const employees = [
 	{
 		name: 'Atticus',
@@ -56,16 +66,25 @@ function createEmployeeObject(employees) {
     employeeCompensation.totalCompensation = (Number(bonus) * Number(employee.annualSalary)) + Number(employee.annualSalary);
     employeeCompensation.totalBonus = Number(bonus) * Number(employee.annualSalary);
     console.log(employeeCompensation);
+
+    let containerEl = $('.employee_container')
+    let nameEl = (`<li>${employeeCompensation.name}</li>`)
+    let percentEl = (`<li>${employeeCompensation.bonusPercentage * 100}%</li>`)
+    let compEl = (`<li>$${employeeCompensation.totalCompensation}</li>`)
+    let bonusEl = (`<li>$${employeeCompensation.name}</li><br>`)
+    
+
+    containerEl.append(nameEl)
+    containerEl.append(percentEl)
+    containerEl.append(compEl)
+    containerEl.append(bonusEl)
+    
+    
+
   }
 }
 
-console.log(createEmployeeObject(employees));
-
-
-
-
-
-
+// createEmployeeObject(employees)
 
 
 
@@ -95,3 +114,4 @@ function employeeBonusCalculator(employee) {
   }
   return totalBonusPercentageIn.toFixed(2);
 }
+
