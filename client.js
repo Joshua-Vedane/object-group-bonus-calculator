@@ -40,4 +40,39 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
+
+
 console.log( employees );
+
+function employeeFunction(employees) {
+  let totalBonusPercentageIn = 0;
+  if(employees.employeeNumber.length === 4){
+    totalBonusPercentageIn += .05;
+  }
+  //ratings
+  if (employees.reviewRating === 3) {
+    totalBonusPercentageIn += .04;
+  }
+  if (employees.reviewRating === 4) {
+    totalBonusPercentageIn += .06;
+  }
+  if (employees.reviewRating === 5) {
+    totalBonusPercentageIn += .1;
+  }
+  if(totalBonusPercentageIn > 0.13) {
+    totalBonusPercentageIn = 0.13;
+  }
+  if (employees.annualSalary > 65000) {
+    totalBonusPercentageIn -= .01;
+  }
+  if(totalBonusPercentageIn < 0 ){
+    totalBonusPercentageIn = 0;
+  }
+  return totalBonusPercentageIn.toFixed(2);
+}
+
+console.log(employeeFunction(employees[0]));
+console.log(employeeFunction(employees[1]));
+console.log(employeeFunction(employees[2]));
+console.log(employeeFunction(employees[3]));
+console.log(employeeFunction(employees[4]));
