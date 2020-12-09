@@ -71,16 +71,13 @@ function createEmployeeObject(employees) {
     let nameEl = (`<li>${employeeCompensation.name}</li>`)
     let percentEl = (`<li>${employeeCompensation.bonusPercentage * 100}%</li>`)
     let compEl = (`<li>$${employeeCompensation.totalCompensation}</li>`)
-    let bonusEl = (`<li>$${employeeCompensation.name}</li><br>`)
+    let bonusEl = (`<li>$${employeeCompensation.totalBonus}</li><br>`)
     
-
     containerEl.append(nameEl)
     containerEl.append(percentEl)
     containerEl.append(compEl)
     containerEl.append(bonusEl)
     
-    
-
   }
 }
 
